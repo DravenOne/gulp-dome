@@ -1,0 +1,96 @@
+$wrapper-color:#fff;
+.site-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+    background: rgb(51,51,51);  
+    align-items: center;
+    overflow: hidden;
+    .inner{
+        display: flex;
+        width: 50rem;
+        height: 5rem;
+        justify-content: space-between;
+        .masthead-brand{
+            color: $wrapper-color;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .masthead-nav{
+            display: flex;
+            height: 100%;
+            li{
+                display: flex;
+                align-items: center;
+                a{
+                    padding:5px 0;
+                    margin: 0 10px;
+                    color: rgba(255,255,255,.75);
+                    font-weight: 600;
+                }
+                a:hover{
+                    border-bottom: 2px solid gray;
+                    background: none;
+                }
+                a:link{
+                    background: none;
+                }
+            }
+            .active{
+                a{
+                    color: $wrapper-color;
+                    border-bottom: 2px solid #fff;   
+                }
+            }
+        }
+        a{
+            color: $wrapper-color;
+        }
+    }
+    .cover{
+        display: flex;
+        color: $wrapper-color;
+        margin: 20rem 0;
+        .cover-inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 40rem;
+            .lead{
+                text-align: center;
+            }
+        }
+    }
+    .mastfoot{
+        display: flex;
+        color: $wrapper-color;
+        a{
+            color: $wrapper-color;
+        }
+    }
+}
+@media (max-width:768px) {
+    .site-wrapper .inner{
+        width: 100%;
+        flex-direction: column;
+        height: 10rem;
+        align-items: center;
+        justify-content: center;
+    }
+    .site-wrapper .inner .masthead-brand{
+        margin-bottom:.5rem; 
+    }
+    .site-wrapper .cover .cover-inner{
+        width: 80%;
+        height: 20rem;
+    }
+    .site-wrapper .cover{
+        flex-grow:1;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+    }
+}
