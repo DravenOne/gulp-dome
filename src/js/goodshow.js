@@ -1,0 +1,35 @@
+function getQueryVariable(variable){
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
+var url = 'http://localhost/tp5/public';
+$(function(){
+    var goodId = getQueryVariable('id');
+    var app = new Vue({
+        el: '#app',
+        data: {
+          datas: '',
+        },
+        created:function(){
+            var _ = this;
+            $.ajax({
+                type:"get",
+                url:url+"/index/IdShow",
+                data:{
+                    id:goodId,
+                },
+                success:function(res){
+                    if(res.code==200){
+                        _.datas = res.data;
+                        console.log(res.data);
+                    }
+                }
+            })
+        }
+      })
+})
