@@ -52,9 +52,9 @@
             <hr>
             <div>
                 <span>数量:</span>
-                <button type="button">-</button>
-                <input type="text" />
-                <button type="button">+</button>
+                <button type="button" @click="number=number-1">-</button>
+                <input type="number" v-model="number"/>
+                <button type="button" @click="number=number+1">+</button>
                 <span>所剩数量:{{datas.housenum}}</span>
                 <span>价格</span>
                 <del>市场价:{{datas.marketprice}}</del>

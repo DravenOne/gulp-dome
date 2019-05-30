@@ -13,7 +13,8 @@ $(function(){
     var app = new Vue({
         el: '#app',
         data: {
-          datas: '',
+          datas: '',//商品详情
+          number:0,
         },
         created:function(){
             var _ = this;
