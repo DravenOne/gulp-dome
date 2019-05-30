@@ -27,9 +27,20 @@ $(function(){
                     if(res.code==200){
                         _.datas = res.data;
                         console.log(res.data);
+                        $.ajax({
+                            type:'post',
+                            url:url+'/index/updateHits',
+                            data:{
+                                id:goodId,
+                                hits:res.data.hits+1,
+                            },
+                            success:function(r){
+                                console.log(r);
+                            }
+                        })
                     }
                 }
-            })
+            });
         }
       })
 })
